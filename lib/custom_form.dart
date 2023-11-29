@@ -19,7 +19,10 @@ class CustomFormField extends StatelessWidget {
       child: TextFormField(
         inputFormatters: inputFormatters,
         validator: validator,
-        decoration: InputDecoration(hintText: hintText),
+        decoration: InputDecoration(
+            hintText: hintText,
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(20))),
       ),
     );
   }
