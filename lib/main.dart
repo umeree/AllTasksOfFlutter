@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'GroupIcon3.dart';
 import 'GroupIcon4.dart';
 import 'GroupIcon5.dart';
+import 'InputandForms.dart';
 
 void main() {
   runApp(const MyApp());
@@ -101,6 +102,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => const FourthRoute(),
+                        ));
+                  },
+                ),
+                ElevatedButton(
+                  child: const Text("Input&Forms"),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const InputAndForms(),
                         ));
                   },
                 ),
