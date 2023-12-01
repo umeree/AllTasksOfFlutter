@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:taskers/Card.dart';
+import 'package:taskers/alertDialog.dart';
+import 'package:taskers/drawer.dart';
 import 'GroupIcon3.dart';
 import 'GroupIcon4.dart';
 import 'GroupIcon5.dart';
@@ -113,6 +116,33 @@ class _MyHomePageState extends State<MyHomePage> {
                         MaterialPageRoute(
                           builder: (context) => const InputAndForms(),
                         ));
+                  },
+                ),
+                ElevatedButton(
+                  child: const Text("Alert Dialog Page"),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const alertDialog()));
+                  },
+                ),
+                ElevatedButton(
+                  child: const Text("Card"),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CardWidget()));
+                  },
+                ),
+                ElevatedButton(
+                  child: const Text("Drawer"),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DrawerWidget()));
                   },
                 ),
               ]),
