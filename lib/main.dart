@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:taskers/Bottom&Drawer.dart';
 import 'package:taskers/Card.dart';
+import 'package:taskers/Tooltip.dart';
 import 'package:taskers/alertDialog.dart';
 import 'package:taskers/drawer.dart';
 import 'GroupIcon3.dart';
@@ -44,10 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.red,
+          statusBarColor: Colors.white,
         ),
         backgroundColor: Colors.amber,
-        surfaceTintColor: Colors.black,
         title: Text(widget.title),
       ),
       body: Center(
@@ -143,6 +144,24 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const DrawerWidget()));
+                  },
+                ),
+                ElevatedButton(
+                  child: const Text("Tool Tip"),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ToolTipWidget()));
+                  },
+                ),
+                ElevatedButton(
+                  child: const Text("Bottom and Drawer"),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const BottomAndDrawer()));
                   },
                 ),
               ]),
