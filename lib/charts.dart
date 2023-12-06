@@ -24,6 +24,7 @@ class ChartsWidget extends StatelessWidget {
                     barTouchData: BarTouchData(enabled: true),
                     titlesData: FlTitlesData(show: false),
                     gridData: FlGridData(show: false),
+                    borderData: FlBorderData(show: false),
                     barGroups: [
                       BarChartGroupData(x: 0, barRods: [
                         BarChartRodData(toY: 13, color: Colors.blue, width: 20),
