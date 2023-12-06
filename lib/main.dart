@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:taskers/Bottom&Drawer.dart';
 import 'package:taskers/Card.dart';
+import 'package:taskers/Constraints.dart';
 import 'package:taskers/Tooltip.dart';
 import 'package:taskers/alertDialog.dart';
+import 'package:taskers/charts.dart';
 import 'package:taskers/drawer.dart';
+import 'package:taskers/switch.dart';
 import 'GroupIcon3.dart';
 import 'GroupIcon4.dart';
 import 'GroupIcon5.dart';
@@ -98,73 +101,109 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ]),
-              Column(children: [
-                ElevatedButton(
-                  child: const Text("List Tile View"),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const FourthRoute(),
-                        ));
-                  },
-                ),
-                ElevatedButton(
-                  child: const Text("Input&Forms"),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const InputAndForms(),
-                        ));
-                  },
-                ),
-                ElevatedButton(
-                  child: const Text("Alert Dialog Page"),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const alertDialog()));
-                  },
-                ),
-                ElevatedButton(
-                  child: const Text("Card"),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const CardWidget()));
-                  },
-                ),
-                ElevatedButton(
-                  child: const Text("Drawer"),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const DrawerWidget()));
-                  },
-                ),
-                ElevatedButton(
-                  child: const Text("Tool Tip"),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ToolTipWidget()));
-                  },
-                ),
-                ElevatedButton(
-                  child: const Text("Bottom and Drawer"),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const BottomAndDrawer()));
-                  },
-                ),
-              ]),
+              Row(
+                children: [
+                  Column(children: [
+                    ElevatedButton(
+                      child: const Text("List Tile View"),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const FourthRoute(),
+                            ));
+                      },
+                    ),
+                    ElevatedButton(
+                      child: const Text("Input&Forms"),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const InputAndForms(),
+                            ));
+                      },
+                    ),
+                    ElevatedButton(
+                      child: const Text("Alert Dialog Page"),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const alertDialog()));
+                      },
+                    ),
+                    ElevatedButton(
+                      child: const Text("Card"),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const CardWidget()));
+                      },
+                    ),
+                    ElevatedButton(
+                      child: const Text("Drawer"),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const DrawerWidget()));
+                      },
+                    ),
+                    ElevatedButton(
+                      child: const Text("Tool Tip"),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ToolTipWidget()));
+                      },
+                    ),
+                    ElevatedButton(
+                      child: const Text("Bottom and Drawer"),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const BottomAndDrawer()));
+                      },
+                    ),
+                    ElevatedButton(
+                      child: const Text("Constraints"),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const ConstraintsWidget()));
+                      },
+                    ),
+                  ]),
+                  Column(
+                    children: [
+                      ElevatedButton(
+                        child: const Text("Switch"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SwitchWidget()));
+                        },
+                      ),
+                      ElevatedButton(
+                        child: const Text("Bar Chart"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const ChartsWidget()));
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ],
           ),
         ),
