@@ -3,11 +3,15 @@ import 'package:flutter/services.dart';
 import 'package:taskers/Bottom&Drawer.dart';
 import 'package:taskers/Card.dart';
 import 'package:taskers/Constraints.dart';
+import 'package:taskers/LineChat.dart';
 import 'package:taskers/Tooltip.dart';
 import 'package:taskers/alertDialog.dart';
+import 'package:taskers/calendar.dart';
 import 'package:taskers/charts.dart';
+import 'package:taskers/datePicker.dart';
 import 'package:taskers/drawer.dart';
 import 'package:taskers/switch.dart';
+import 'package:taskers/theme.dart';
 import 'GroupIcon3.dart';
 import 'GroupIcon4.dart';
 import 'GroupIcon5.dart';
@@ -27,9 +31,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+          brightness: Brightness.dark,
+          primaryColor: Colors.blue,
+          indicatorColor: Colors.red,
+          scaffoldBackgroundColor: Colors.grey[300],
+          dividerColor: Colors.grey,
+          iconTheme: IconThemeData(color: Colors.black),
+          colorScheme: ColorScheme.dark(),
+          primaryColorDark: Colors.pink),
       home: const MyHomePage(title: 'Widgets Pro'),
     );
   }
@@ -198,6 +207,45 @@ class _MyHomePageState extends State<MyHomePage> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const ChartsWidget()));
+                        },
+                      ),
+                      ElevatedButton(
+                        child: const Text("Line Chart"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const LineChartSample1()));
+                        },
+                      ),
+                      ElevatedButton(
+                        child: const Text("Themes"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const ThemeWidget()));
+                        },
+                      ),
+                      ElevatedButton(
+                        child: const Text("Calendar"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const CalendarWidget()));
+                        },
+                      ),
+                      ElevatedButton(
+                        child: const Text("Date Picker"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const DatePickerWidget()));
                         },
                       ),
                     ],
