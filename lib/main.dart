@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:taskers/Bottom&Drawer.dart';
 import 'package:taskers/Card.dart';
 import 'package:taskers/Constraints.dart';
+import 'package:taskers/FutureBuilder.dart';
 import 'package:taskers/LineChat.dart';
 import 'package:taskers/Tooltip.dart';
 import 'package:taskers/alertDialog.dart';
@@ -10,6 +11,9 @@ import 'package:taskers/calendar.dart';
 import 'package:taskers/charts.dart';
 import 'package:taskers/datePicker.dart';
 import 'package:taskers/drawer.dart';
+import 'package:taskers/fittedBox.dart';
+import 'package:taskers/flexible.dart';
+import 'package:taskers/splashScreen.dart';
 import 'package:taskers/switch.dart';
 import 'package:taskers/theme.dart';
 import 'GroupIcon3.dart';
@@ -31,15 +35,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-          brightness: Brightness.dark,
+          // brightness: Brightness.dark,
           primaryColor: Colors.blue,
           indicatorColor: Colors.red,
-          scaffoldBackgroundColor: Colors.grey[300],
+          // scaffoldBackgroundColor: Colors.grey[300],
           dividerColor: Colors.grey,
           iconTheme: IconThemeData(color: Colors.black),
           colorScheme: ColorScheme.dark(),
           primaryColorDark: Colors.pink),
-      home: const MyHomePage(title: 'Widgets Pro'),
+      home: SplashScreen(),
     );
   }
 }
@@ -248,8 +252,42 @@ class _MyHomePageState extends State<MyHomePage> {
                                       const DatePickerWidget()));
                         },
                       ),
+                      ElevatedButton(
+                        child: const Text("Fitted Box"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const FIttedBoxWidget()));
+                        },
+                      ),
+                      ElevatedButton(
+                        child: const Text("Future Builder"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const FutureBuilderWidget()));
+                        },
+                      ),
                     ],
                   ),
+                  Column(
+                    children: [
+                      ElevatedButton(
+                        child: const Text("Flexible"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const FlexibleWidget()));
+                        },
+                      ),
+                    ],
+                  )
                 ],
               ),
             ],
