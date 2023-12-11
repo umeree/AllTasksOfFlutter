@@ -5,6 +5,7 @@ import 'package:taskers/Card.dart';
 import 'package:taskers/Constraints.dart';
 import 'package:taskers/FutureBuilder.dart';
 import 'package:taskers/LineChat.dart';
+import 'package:taskers/StreamBuilder.dart';
 import 'package:taskers/Tooltip.dart';
 import 'package:taskers/alertDialog.dart';
 import 'package:taskers/calendar.dart';
@@ -284,6 +285,16 @@ class _MyHomePageState extends State<MyHomePage> {
                               MaterialPageRoute(
                                   builder: (context) =>
                                       const FlexibleWidget()));
+                        },
+                      ),
+                      ElevatedButton(
+                        child: const Text("Streams"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const StreamBuilderWidget()));
                         },
                       ),
                     ],
