@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:taskers/Bottom&Drawer.dart';
 import 'package:taskers/Card.dart';
 import 'package:taskers/Constraints.dart';
 import 'package:taskers/FutureBuilder.dart';
 import 'package:taskers/LineChat.dart';
+import 'package:taskers/Providers/MessageProvider.dart';
 import 'package:taskers/StreamBuilder.dart';
+import 'package:taskers/StreamsWidget.dart';
 import 'package:taskers/Tooltip.dart';
 import 'package:taskers/alertDialog.dart';
 import 'package:taskers/calendar.dart';
@@ -32,19 +35,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-          // brightness: Brightness.dark,
-          primaryColor: Colors.blue,
-          indicatorColor: Colors.red,
-          // scaffoldBackgroundColor: Colors.grey[300],
-          dividerColor: Colors.grey,
-          iconTheme: IconThemeData(color: Colors.black),
-          colorScheme: ColorScheme.dark(),
-          primaryColorDark: Colors.pink),
-      home: SplashScreen(),
+    return ChangeNotifierProvider(
+      create: (context) => MessageProvider(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+            // brightness: Brightness.dark,
+            primaryColor: Colors.blue,
+            indicatorColor: Colors.red,
+            // scaffoldBackgroundColor: Colors.grey[300],
+            dividerColor: Colors.grey,
+            iconTheme: IconThemeData(color: Colors.black),
+            colorScheme: ColorScheme.dark(),
+            primaryColorDark: Colors.pink),
+        home: SplashScreen(),
+      ),
     );
   }
 }
@@ -295,6 +301,15 @@ class _MyHomePageState extends State<MyHomePage> {
                               MaterialPageRoute(
                                   builder: (context) =>
                                       const StreamBuilderWidget()));
+                        },
+                      ),
+                      ElevatedButton(
+                        child: const Text("SW"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const StreamsWidget()));
                         },
                       ),
                     ],
