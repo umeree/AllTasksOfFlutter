@@ -6,7 +6,9 @@ import 'package:taskers/Card.dart';
 import 'package:taskers/Constraints.dart';
 import 'package:taskers/FutureBuilder.dart';
 import 'package:taskers/LineChat.dart';
+import 'package:taskers/LinearGradient.dart';
 import 'package:taskers/Providers/MessageProvider.dart';
+import 'package:taskers/SharedPrefs.dart';
 import 'package:taskers/StreamBuilder.dart';
 import 'package:taskers/StreamsWidget.dart';
 import 'package:taskers/Tooltip.dart';
@@ -17,6 +19,8 @@ import 'package:taskers/datePicker.dart';
 import 'package:taskers/drawer.dart';
 import 'package:taskers/fittedBox.dart';
 import 'package:taskers/flexible.dart';
+import 'package:taskers/fonts.dart';
+import 'package:taskers/gestureDetector.dart';
 import 'package:taskers/splashScreen.dart';
 import 'package:taskers/switch.dart';
 import 'package:taskers/theme.dart';
@@ -79,48 +83,6 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(5),
           child: Column(
             children: [
-              Stack(children: [
-                Container(
-                  width: 400,
-                  height: 280,
-                  color: Colors.pink,
-                ),
-                Positioned(
-                  left: 100,
-                  top: 40,
-                  child: Container(
-                    decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(30))),
-                    width: 200,
-                    height: 200,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                      child: Image.network(
-                        "https://res.cloudinary.com/dtv3hj7en/image/upload/v1700477124/cld-sample-2.jpg",
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 70,
-                  left: 125,
-                  child: Container(
-                    width: 150,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15),
-                      child: Image.network(
-                        "https://res.cloudinary.com/dtv3hj7en/image/upload/v1700477124/cld-sample-3.jpg",
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
-              ]),
               Row(
                 children: [
                   Column(children: [
@@ -197,6 +159,15 @@ class _MyHomePageState extends State<MyHomePage> {
                             MaterialPageRoute(
                                 builder: (context) =>
                                     const ConstraintsWidget()));
+                      },
+                    ),
+                    ElevatedButton(
+                      child: const Text("Linear Gradient"),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LinearGradientW()));
                       },
                     ),
                   ]),
@@ -279,10 +250,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                       const FutureBuilderWidget()));
                         },
                       ),
-                    ],
-                  ),
-                  Column(
-                    children: [
                       ElevatedButton(
                         child: const Text("Flexible"),
                         onPressed: () {
@@ -312,8 +279,36 @@ class _MyHomePageState extends State<MyHomePage> {
                                   builder: (context) => const StreamsWidget()));
                         },
                       ),
+                      ElevatedButton(
+                        child: const Text("Fonts"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Fonts()));
+                        },
+                      ),
+                      ElevatedButton(
+                        child: const Text("Shared Prefs"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SharedPrefs()));
+                        },
+                      ),
+                      ElevatedButton(
+                        child: const Text("Gesture detector"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const GestureDetectorW()));
+                        },
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ],
